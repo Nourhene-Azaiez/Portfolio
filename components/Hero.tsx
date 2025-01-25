@@ -2,6 +2,7 @@ import React from 'react'
 import { BackgroundGradientAnimation } from './ui/background-gradient-animation'
 import { TextGenerateEffect } from './ui/text-generate-effect'
 import { AuroraBackground } from './ui/aurora-background'
+import DownloadButton from './ui/DownloadButton'
 
 const Hero = () => {
   return (
@@ -21,8 +22,8 @@ const Hero = () => {
           <p className="font-bold dark:text-white">I’m Azaiez Nourhene, an aspiring ICT Engineering Student.</p>
           <p className="font-bold dark:text-white">Passionate about innovation and creating impactful solutions.</p>
           <TextGenerateEffect className="font-medium" words={'Discover my journey and projects!'} />
-          <p className="font-light text-sm dark:text-white pt-7">Download my Resume below</p>   
-               
+          <p className="font-light text-sm dark:text-white pt-7 mb-3">Download my Resume below</p>   
+          <DownloadButton />     
         </div>
         </AuroraBackground>
         </div>
