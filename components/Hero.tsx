@@ -1,17 +1,28 @@
 import React from 'react'
 import { BackgroundGradientAnimation } from './ui/background-gradient-animation'
+import { TextGenerateEffect } from './ui/text-generate-effect'
+import { AuroraBackground } from './ui/aurora-background'
 
 const Hero = () => {
   return (
     <div>
         <div>
         <BackgroundGradientAnimation>
-        <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
-            <p className="bg-clip-text text-white drop-shadow-2xl">
-            Gradients X Animations
-            </p>
+        <div className="absolute z-50 inset-0 flex flex-col items-center justify-center font-medium px-4 pointer-events-none text-xl text-center md:text-2xl lg:text-4xl">
+          <TextGenerateEffect className="font-medium" words={'Hi there!'} />
+          <p className="font-bold">I’m Azaiez Nourhene, an aspiring ICT Engineering Student.</p>
+          <p className="font-bold">Passionate about innovation and creating impactful solutions.</p>
+          <TextGenerateEffect className="font-medium" words={'Discover my journey and projects!'} />
         </div>
         </BackgroundGradientAnimation>
+        {/* <AuroraBackground>
+        <div className="absolute z-50 inset-0 flex flex-col items-center justify-center font-medium px-4 pointer-events-none text-xl text-center md:text-2xl lg:text-4xl">
+          <TextGenerateEffect className="font-medium" words={'Hi there!'} />
+          <p className="font-bold">I’m Azaiez Nourhene, an aspiring ICT Engineering Student.</p>
+          <p className="font-bold">Passionate about innovation and creating impactful solutions.</p>
+          <TextGenerateEffect className="font-medium" words={'Discover my journey and projects!'} />
+        </div>
+        </AuroraBackground> */}
         </div>
     </div>
   )
