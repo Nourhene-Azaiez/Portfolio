@@ -6,7 +6,7 @@ import { CardBody, CardContainer, CardItem } from './ui/3d-card'
 
 const Hero = () => {
   return (
-    <div className="h-screen overflow-auto">
+    <div className="h-screen overflow-auto sm:overflow-hidden">
       <AuroraBackground className='pt-80 lg:pt-0 flex justify-center h-[50rem] w-full dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05] relative items-center'>
         <div className=" m-10 sm:m-20 flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-10 py-10 sm:py-0">
           {/* Image Card with fixed size */}
@@ -14,7 +14,7 @@ const Hero = () => {
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[250px] sm:w-[300px] h-[350px] sm:h-[400px] rounded-xl border">
               <CardItem translateZ="100" className="w-full h-full">
                 <img
-                  src="/me.jpg"
+                  src="/me.png"
                   height="400"
                   width="300"
                   className="w-full h-full object-cover rounded-xl group-hover/card:shadow-xl"
