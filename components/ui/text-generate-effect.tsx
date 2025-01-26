@@ -34,10 +34,15 @@ export const TextGenerateEffect = ({
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
+          // Check if the word is the name and apply red color
+          const isName = word === "Nourhene" || word === "Azaiez";
           return (
             <motion.span
               key={word + idx}
-              className="dark:text-white text-black opacity-0"
+              className={cn(
+                "opacity-0",
+                isName ? "text-violet-600 dark:text-violet-400" : "dark:text-white text-black"
+              )}
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
@@ -53,7 +58,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-medium", className)}>
       <div className="mt-1 mb-1">
-        <div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
+        <div className="dark:text-white text-black text-2xl leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>
