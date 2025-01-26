@@ -9,7 +9,7 @@ import { Link } from 'lucide-react'
 const Hero = () => {
   return (
     <div className="h-screen overflow-auto">
-      <AuroraBackground className='flex justify-center'>
+      <AuroraBackground className='flex justify-center h-[50rem] w-full dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05] relative items-center'>
         <div className="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-10 py-10 sm:py-0">
           {/* Image Card with fixed size */}
           <CardContainer className="inter-var mb-10 sm:mb-0">
@@ -27,7 +27,7 @@ const Hero = () => {
           </CardContainer>
 
           {/* Text Section */}
-          <div className="z-50 flex flex-col items-start justify-start font-medium px-4 text-xl text-center md:text-2xl lg:text-4xl">
+          <div className="z-50 flex flex-col sm:items-start sm:justify-start font-medium px-4 text-xl text-center md:text-2xl lg:text-4xl items-center justify-center">
             <p className="font-medium text-base mb-4 dark:text-white">Hi there!</p>
             <TextGenerateEffect className="font-bold dark:text-white" words={'I’m Azaiez Nourhene, an aspiring ICT Engineering Student.'} />
             <TextGenerateEffect className="font-bold dark:text-white" words={'Passionate about innovation and creating impactful solutions.'} />
@@ -38,6 +38,7 @@ const Hero = () => {
         </div>
       </AuroraBackground>
     </div>
+    
   )
 }
 
