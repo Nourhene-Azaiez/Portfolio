@@ -3,4 +3,5 @@
 @tailwind utilities;
 html {
 color-scheme: light dark;
+scroll-behavior: smooth;
 }

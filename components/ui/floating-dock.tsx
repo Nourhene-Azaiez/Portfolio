@@ -40,12 +40,12 @@ const FloatingDockMobile = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={cn("fixed bottom-4 right-4 z-50 block md:hidden", className)}>
+    <div className={cn("fixed bottom-4 right-2 z-50 block md:hidden", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute bottom-full mb-2 inset-x-0 grid grid-cols-3 gap-2 p-2 bg-gray-50 dark:bg-neutral-900 rounded-lg shadow-lg"
+            className="absolute bottom-full justify-center mb-2 inset-x-0 grid grid-rows-3 gap-2 p-3 bg-gray-50 dark:bg-neutral-900 rounded shadow"
           >
             {items.map((item, idx) => (
               <motion.div
@@ -58,7 +58,7 @@ const FloatingDockMobile = ({
                 <Link
                   href={item.href}
                   aria-label={item.title}
-                  className="h-12 w-12 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center"
+                  className="h-10 w-10 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center"
                 >
                   <div className="text-xl">{item.icon}</div>
                 </Link>
@@ -92,7 +92,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 flex h-16 gap-4 items-end rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3 shadow-lg",
+        "fixed bottom-4 left-1/2 transform hidden md:flex -translate-x-1/2 z-50 h-16 gap-4 items-end rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3 shadow-lg",
         className
       )}
     >
