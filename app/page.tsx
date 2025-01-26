@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import { FloatingDock } from "@/components/ui/floating-dock";
-import { FaHome, FaSearch, FaUser } from "react-icons/fa";
+import { FaHome, FaSearch, FaUser, FaBriefcase, FaEnvelope, FaHandsHelping, FaLaptop } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -11,8 +11,11 @@ export default function Home() {
       <FloatingDock 
         items={[
           { title: 'Home', icon: <FaHome />, href:"#Hero" },
-          { title: 'Search', icon: <FaSearch />, href:""},
-          { title: 'Profile', icon: <FaUser />, href:"" },
+          { title: 'About', icon: <FaUser />, href:""},
+          { title: 'Projects', icon: <FaLaptop />, href:"" },
+          { title: 'Experience', icon: <FaBriefcase />, href:"" },
+          { title: 'Volunteering', icon: <FaHandsHelping />, href:"" },
+          { title: 'Contact', icon: <FaEnvelope />, href:"" },
         ]}
       />
     </main>
