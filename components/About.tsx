@@ -18,7 +18,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
       </div>
       <BentoGrid className="mt-10 grid-cols-1 md:grid-cols-3 gap-4">
         {/* First row */}
-        <BentoGridItem className="col-span-1 md:col-span-1 ">
+        <BentoGridItem className="col-span-1 md:col-span-1 p-0 ">
           <CardSpotlight className="h-full">
             <p className="text-xl font-bold relative z-20 mt-2 text-white">
               Authentication steps
