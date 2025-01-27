@@ -4,30 +4,6 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import React, { useState, useEffect } from "react";
 
-const DotMatrix = () => {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Ensure the theme is mounted to avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  return (
-    <div className="h-full w-full flex items-center justify-center">
-      <img
-        src="/giphy.gif"
-        alt="Dot Matrix Animation"
-        className={`transition-opacity duration-500 ${
-          theme === "dark" ? "opacity-100" : "opacity-70"
-        }`}
-      />
-    </div>
-  );
-};
-
 const CanvasRevealEffect = ({
   containerClassName,
   showGradient = true,
@@ -39,6 +15,7 @@ const CanvasRevealEffect = ({
   dotSize?: number;
   showGradient?: boolean;
 }) => {
+  const { theme } = useTheme();
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -47,13 +24,21 @@ const CanvasRevealEffect = ({
 
   if (!isClient) return null;
 
+  // Define the background images for light and dark themes
+  const backgroundImage =
+    theme === "dark" ? "/giphy.gif" : "/lightgiphy.gif"; // Adjust this to your images
+
   return (
-    <div className={cn("h-full relative bg-white w-full", containerClassName)}>
-      <div className="h-full w-full">
-        <DotMatrix />
-      </div>
+    <div
+      className={cn("h-full relative w-full", containerClassName)}
+      style={{
+        backgroundImage: `url(${backgroundImage})`, // Set the background image based on the theme
+        backgroundSize: "cover", // Ensure the image covers the full container
+        backgroundPosition: "center", // Center the image
+      }}
+    >
       {showGradient && (
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-800 to-[84%]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-100 dark:from-zinc-800 to-transparent" />
       )}
     </div>
   );

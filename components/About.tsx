@@ -2,57 +2,93 @@ import React from 'react';
 import { BentoGrid, BentoGridItem } from './ui/bento-grid';
 import { CardSpotlight } from './ui/card-spotlight';
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
+import { ColourfulText } from './ui/colourful-text';
 
 
 interface AboutProps {
   id?: string;
 }
 
-const testimonials = [
+const line1 = [
+  
   {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+    logo: "/mysql.png", // Replace with an actual logo URL
+    name: "MySql Database",
   },
   {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+    logo: "/elastic.png", // Replace with an actual logo URL
+    name: "Elastic Products",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+    logo: "/Grafana.png", // Replace with an actual logo URL
+    name: "Grafana",
   },
   {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+    logo: "/docker.webp", // Replace with an actual logo URL
+    name: "Docker",
   },
   {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+    logo: "/github.png", // Replace with an actual logo URL
+    name: "Github",
   },
 ];
+
+const line2 = [
+  {
+    logo: "/kafka.png", // Replace with an actual logo URL
+    name: "Apache Kafka",
+  },
+  {
+    logo: "/spark.png", // Replace with an actual logo URL
+    name: "Apache Spark",
+  },
+  {
+    logo: "/airflow.png", // Replace with an actual logo URL
+    name: "Apache Airflow",
+  },
+  {
+    logo: "/fluentd.png", // Replace with an actual logo URL
+    name: "FluentD",
+  },
+];
+
+const line3 = [
+  {
+    logo: "/aws1.jpg", // Replace with an actual logo URL
+    name: "Amazon Kinesis Data Stream",
+  },
+  {
+    logo: "/aws2.png", // Replace with an actual logo URL
+    name: "AWS Lambda",
+  },
+  {
+    logo: "/aws3.png", // Replace with an actual logo URL
+    name: "Amazon Glue",
+  },
+  {
+    logo: "/aws4.png", // Replace with an actual logo URL
+    name: "Amazon EC2",
+  },
+  {
+    logo: "/aws5.png", // Replace with an actual logo URL
+    name: "Amazon S3",
+  },
+];
+
 
 const About: React.FC<AboutProps> = ({ id }) => {
   return (
     <div id={id} className='dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05]' >
-      <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-justify items-center justify-center">
-        <p className="font-extrabold text-4xl mt-4 dark:text-white">About me</p>
-        <p className="font-semibold text-sm mx-8 dark:text-white pt-7 mb-3">
-          I’m a motivated and driven engineering student passionate about data engineering, real-time data processing, and Generative AI while leveraging Devops tools 🎓. My journey combines strong theoretical knowledge with hands-on experience 💻, enabling me to design scalable data pipelines and optimize cloud architectures for high-demand environments 🌐. With a passion for cloud deployment, system optimization, and building resilient infrastructures, I focus on leveraging cutting-edge technologies like Kafka, Spark, and AWS to create impactful solutions 🔐. I thrive on solving complex technical challenges, from real-time data processing to log management, ensuring systems are efficient, scalable, and secure. Driven by the mission to enhance system performance and deliver innovative solutions, I aim to push the boundaries of technology in today’s fast-paced digital landscape 🚀.
+      <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-center items-center justify-center">
+      <p className="font-bold text-md mx-8 dark:text-white pt-7 mb-3"><ColourfulText text="About Me" /></p>
+        <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Take a Glimpse Into My World</p>
+        <p className="font-normal text-sm mx-8 dark:text-white pt-7 mb-3">
+          I’m a motivated and driven engineering student passionate about data engineering, real-time data processing, and Generative AI while leveraging Devops tools 🎓. My journey combines strong theoretical knowledge with hands-on experience 💻, enabling me to design scalable data pipelines and optimize cloud architectures for high-demand environments 🌐. With a passion for cloud deployment, system optimization, and building resilient infrastructures, I focus on leveraging cutting-edge technologies to create impactful solutions 🔐. I thrive on solving complex technical challenges, ensuring systems are efficient, scalable, and secure. I aim to push the boundaries of technology in today’s fast-paced digital landscape 🚀.
         </p>
       </div>
       <BentoGrid className="mt-10 grid-cols-1 md:grid-cols-3 gap-4">
-        {/* First row */}
         <BentoGridItem className="col-span-1 md:col-span-1 p-0 ">
-          <CardSpotlight className="h-full text-neutral-200">
+          <CardSpotlight className="h-full text-neutral-800 dark:text-neutral-200">
             <p className="relative z-20 font-sans font-bold ">
               My Approach
             </p>
@@ -87,19 +123,24 @@ const About: React.FC<AboutProps> = ({ id }) => {
             </ul>
           </CardSpotlight>
         </BentoGridItem>
-        <BentoGridItem title="Tech Stack" className="col-span-1 md:col-span-2">
+        <BentoGridItem title="Tech Stack" description="Explore the tools and technologies I use to build efficient, scalable, and secure solutions." className="col-span-1 md:col-span-2">
           <InfiniteMovingCards
-          items={testimonials}
+          items={line1}
           direction="right"
-          speed="slow"
+          speed="fast"
         />
         <InfiniteMovingCards
-          items={testimonials}
+          items={line2}
+          direction="left"
+          speed="fast"
+        />
+        <InfiniteMovingCards
+          items={line3}
           direction="right"
-          speed="slow"
+          speed="fast"
         />
         </BentoGridItem>
-        {/* Second row (inverse layout) */}
+
         <BentoGridItem
           title="Studies"
           description="Optimized cloud architecture for scalable solutions, Developed real-time data pipelines"
