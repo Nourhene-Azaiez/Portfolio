@@ -3,11 +3,15 @@
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React, { MouseEvent as ReactMouseEvent, useState } from "react";
 import { cn } from "@/lib/utils";
-import { CanvasRevealEffect } from "./canvas-reveal-effect";
+import dynamic from "next/dynamic";
+
+const CanvasRevealEffect = dynamic(() => import("./canvas-reveal-effect"), {
+  ssr: false, // Disable server-side rendering for this component
+});
 
 export const CardSpotlight = ({
   children,
-  radius = 350,
+  radius = 150,
   color = "#262626",
   className,
   ...props

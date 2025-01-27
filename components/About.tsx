@@ -18,8 +18,8 @@ const About: React.FC<AboutProps> = ({ id }) => {
       </div>
       <BentoGrid className="mt-10 grid-cols-1 md:grid-cols-3 gap-4">
         {/* First row */}
-        <BentoGridItem title="My Approach" description="Data Engineering, Cloud Technologies, Real-Time Data Processing, DevOps" icon={<i className="fas fa-cogs"></i>} className="col-span-1 md:col-span-1">
-          <CardSpotlight className="h-96 w-96">
+        <BentoGridItem className="col-span-1 md:col-span-1 ">
+          <CardSpotlight className="h-full">
             <p className="text-xl font-bold relative z-20 mt-2 text-white">
               Authentication steps
             </p>
