@@ -4,7 +4,11 @@ import { AuroraBackground } from './ui/aurora-background'
 import DownloadButton from './ui/DownloadButton'
 import { CardBody, CardContainer, CardItem } from './ui/3d-card'
 
-const Hero = () => {
+interface HeroProps {
+  id?: string;
+}
+
+const Hero: React.FC<HeroProps> = ({ id }) => {
   return (
     <div className=" overflow-auto sm:overflow-hidden h-full">
       <AuroraBackground className='flex justify-center w-full h-full dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05] relative items-center'>
