@@ -1,11 +1,44 @@
 import React from 'react';
 import { BentoGrid, BentoGridItem } from './ui/bento-grid';
 import { CardSpotlight } from './ui/card-spotlight';
+import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 
 
 interface AboutProps {
   id?: string;
 }
+
+const testimonials = [
+  {
+    quote:
+      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+    name: "Charles Dickens",
+    title: "A Tale of Two Cities",
+  },
+  {
+    quote:
+      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+    name: "William Shakespeare",
+    title: "Hamlet",
+  },
+  {
+    quote: "All that we see or seem is but a dream within a dream.",
+    name: "Edgar Allan Poe",
+    title: "A Dream Within a Dream",
+  },
+  {
+    quote:
+      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+    name: "Jane Austen",
+    title: "Pride and Prejudice",
+  },
+  {
+    quote:
+      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+    name: "Herman Melville",
+    title: "Moby-Dick",
+  },
+];
 
 const About: React.FC<AboutProps> = ({ id }) => {
   return (
@@ -19,26 +52,53 @@ const About: React.FC<AboutProps> = ({ id }) => {
       <BentoGrid className="mt-10 grid-cols-1 md:grid-cols-3 gap-4">
         {/* First row */}
         <BentoGridItem className="col-span-1 md:col-span-1 p-0 ">
-          <CardSpotlight className="h-full">
-            <p className="relative z-20 font-sans font-bold text-neutral-200">
-              Authentication steps
+          <CardSpotlight className="h-full text-neutral-200">
+            <p className="relative z-20 font-sans font-bold ">
+              My Approach
             </p>
-            <div className="text-neutral-200 mt-4 relative z-20">
-              Follow these steps to secure your account
+            <div className=" mt-1 mb-7 relative z-20 text-xs">
+            I believe in combining strong work ethics, effective collaboration, and strategic thinking to deliver impactful results.
             </div>
-            <p className="text-neutral-300 mt-4 relative z-20 text-sm">
-              Ensuring your account is properly secured helps protect your personal
-              information and data.
-            </p>
+            <ul className="relative z-20 font-sans text-xs space-y-2 pl-3 mb-3">
+              <li className="flex items-center">
+                <span className="text-violet-500 mr-2">✔</span>
+                <strong>Adaptability</strong>
+              </li>
+              <li className="flex items-center">
+                <span className="text-violet-500 mr-2">✔</span>
+                <strong>Collaboration, Team work and Communication</strong>
+              </li>
+              <li className="flex items-center">
+                <span className="text-violet-500 mr-2">✔</span>
+                <strong>Attention to Detail and Precision</strong>
+              </li>
+              <li className="flex items-center">
+                <span className="text-violet-500 mr-2">✔</span>
+                <strong>Proactive Thinking</strong>
+              </li>
+              <li className="flex items-center">
+                <span className="text-violet-500 mr-2">✔</span>
+                <strong>Continuous Learning and Growth</strong>
+              </li>
+              <li className="flex items-center">
+                <span className="text-violet-500 mr-2">✔</span>
+                <strong>Time Management</strong>
+              </li>
+            </ul>
           </CardSpotlight>
         </BentoGridItem>
-        <BentoGridItem
-          title="Tech Stack"
-          description="Kafka, Spark, AWS, Docker, Kubernetes"
-          icon={<i className="fab fa-cloud"></i>}
-          className="col-span-1 md:col-span-2"
+        <BentoGridItem title="Tech Stack" className="col-span-1 md:col-span-2">
+          <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
         />
-
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+        </BentoGridItem>
         {/* Second row (inverse layout) */}
         <BentoGridItem
           title="Studies"
