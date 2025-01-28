@@ -34,7 +34,7 @@ const cards = [
   },
   {
     description: "Keywords",
-    title: "Interactive Portfolio",
+    title: "Interactive",
     src: "/me.png",
     ctaLink: "https://github.com/your-username/portfolio",
     content: (
@@ -59,7 +59,7 @@ const cards = [
   },
   {
     description: "Keywords",
-    title: "Interactive Portfolio",
+    title: " Portfolio",
     src: "/me.png",
     ctaLink: "https://github.com/your-username/portfolio",
     content: (
@@ -72,6 +72,13 @@ const cards = [
         </p>
   
         <p><strong className="mt-4">Features</strong></p>
+        <ul className="list-disc list-inside">
+          <li>Interactive and animated transitions using Framer Motion</li>
+          <li>Fully responsive design for all screen sizes</li>
+          <li>Built with React and TypeScript for scalability and maintainability</li>
+          <li>Fast-loading images with lazy loading and optimized assets</li>
+          <li>Dark mode support for better user experience</li>
+        </ul>
         <ul className="list-disc list-inside">
           <li>Interactive and animated transitions using Framer Motion</li>
           <li>Fully responsive design for all screen sizes</li>
