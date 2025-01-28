@@ -94,7 +94,7 @@ const cards = [
 
 const Projects: React.FC<ProjectProps> = ({ id }) => {
   return (
-    <div id={id} className='dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05]' >
+    <div id={id} className='dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05] pb-14' >
       <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-center items-center justify-center">
         <p className="font-bold text-2xl mx-8 dark:text-white pt-7 mb-1"><ColourfulText text="Personal Projects" /></p>
         <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Turning ideas into reality, one project at a time.</p>

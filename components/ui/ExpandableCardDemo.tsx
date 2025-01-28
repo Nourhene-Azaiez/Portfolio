@@ -61,7 +61,7 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-3xl bg-white dark:bg-neutral-900 rounded-3xl shadow-lg overflow-hidden"
+              className="w-full max-w-3xl bg-white dark:bg-zinc-900 rounded-3xl shadow-lg overflow-hidden"
             >
               {/* Close Button */}
               <motion.button
@@ -91,17 +91,17 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
               <div className="p-6 overflow-auto max-h-[60vh]">
                 <motion.h3
                   layoutId={`title-${active.title}-${id}`}
-                  className="text-2xl font-bold text-neutral-800 dark:text-neutral-200"
+                  className="text-2xl font-bold text-zinc-800 dark:text-zinc-200"
                 >
                   {active.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${active.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 mt-2"
+                  className="text-zinc-600 dark:text-zinc-400 mt-2"
                 >
                   {active.description}
                 </motion.p>
-                <div className="mt-4 text-sm text-neutral-700 dark:text-neutral-400">
+                <div className="mt-4 text-sm text-zinc-700 dark:text-zinc-400">
                   {active.content}
                 </div>
                 <motion.a
@@ -130,7 +130,7 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
           <motion.div
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center bg-neutral-200 hover:bg-neutral-300 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center bg-zinc-200 dark:bg-black hover:shadow-xl dark:shadow-zinc-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -145,13 +145,13 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
+                  className="font-medium text-zinc-800 dark:text-zinc-200 text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
+                  className="text-zinc-600 dark:text-zinc-400 text-center md:text-left"
                 >
                   {card.description}
                 </motion.p>
