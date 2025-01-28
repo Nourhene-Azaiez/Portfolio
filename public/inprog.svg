@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <defs>
+        <style>
+            .background {
+                fill:rgb(19, 19, 214); /* zinc-300 */
+            }
+        </style>
+        
+        <linearGradient id="metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFFFFF"/>
+            <stop offset="20%" style="stop-color:#E8E8E8"/>
+            <stop offset="40%" style="stop-color:#D3D3D3"/>
+            <stop offset="60%" style="stop-color:#A9A9A9"/>
+            <stop offset="80%" style="stop-color:#888888"/>
+            <stop offset="100%" style="stop-color:#666666"/>
+        </linearGradient>
+        <radialGradient id="lensFlare1" cx="70%" cy="30%" r="60%">
+            <stop offset="0%" style="stop-color:rgba(255, 255, 255, 0.9)"/>
+            <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+        </radialGradient>
+        <radialGradient id="lensFlare2" cx="30%" cy="70%" r="40%">
+            <stop offset="0%" style="stop-color:rgba(200,200,255,0.6)"/>
+            <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+        </radialGradient>
+        <filter id="photoEffect" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+            <feOffset dx="4" dy="4" result="offsetBlur"/>
+            <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" 
+                              specularExponent="20" lighting-color="#white" result="specOut">
+                <fePointLight x="100" y="100" z="200"/>
+            </feSpecularLighting>
+            <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+            <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+                        k1="0" k2="1" k3="1" k4="0"/>
+        </filter>
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <rect width="20" height="20" fill="#1a1a1a"/>
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2c2c2c" stroke-width="0.5"/>
+        </pattern>
+    </defs>
+    <!-- Background with dynamic color -->
+    <rect class="background" width="400" height="400"/>
+    <rect width="400" height="400" fill="url(#grid)" opacity="0.8"/>
+    <circle cx="280" cy="120" r="160" fill="url(#lensFlare1)" opacity="0.7"/>
+    <circle cx="120" cy="280" r="120" fill="url(#lensFlare2)" opacity="0.5"/>
+    <rect x="50" y="50" width="300" height="300" fill="none" stroke="#333" stroke-width="2" opacity="0.3"/>
+    <rect x="60" y="60" width="280" height="280" fill="none" stroke="#444" stroke-width="1" opacity="0.4"/>
+    <rect x="70" y="70" width="260" height="260" fill="none" stroke="#555" stroke-width="1" opacity="0.5"/>
+    <path d="M 50,50 L 90,50 M 50,50 L 50,90" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+    <path d="M 350,50 L 310,50 M 350,50 L 350,90" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+    <path d="M 50,350 L 90,350 M 50,350 L 50,310" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+    <path d="M 350,350 L 310,350 M 350,350 L 350,310" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+    <text x="200" y="180" 
+          font-family="Arial Black" 
+          font-size="46" 
+          font-weight="bold" 
+          text-anchor="middle" 
+          fill="url(#metallic)"
+          filter="url(#photoEffect)">
+        IN
+    </text>
+    <text x="200" y="240" 
+          font-family="Arial Black" 
+          font-size="46" 
+          font-weight="bold" 
+          text-anchor="middle" 
+          fill="url(#metallic)"
+          filter="url(#photoEffect)">
+        PROGRESS
+    </text>
+</svg>

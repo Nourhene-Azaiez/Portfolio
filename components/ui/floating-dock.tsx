@@ -92,7 +92,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "fixed bottom-4 left-1/2 transform hidden md:flex -translate-x-1/2 z-50 h-16 gap-4 items-end rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3 shadow-lg",
+        "fixed bottom-4 left-1/2 transform hidden md:flex -translate-x-1/2 z-50 h-16 gap-4 items-end rounded-2xl bg-gray-50 border border-gray-200 dark:border-zinc-800 dark:bg-neutral-900 px-4 pb-3 shadow-lg",
         className
       )}
     >
