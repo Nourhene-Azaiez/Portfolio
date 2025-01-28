@@ -110,14 +110,14 @@ interface ExperienceProps {
 const Experience: React.FC<ExperienceProps> = ({ id }) => {
   return (
     <div id={id} className='dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05] justify-center items-center' >
-        <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-center items-center justify-center">
-          <p className="font-bold text-2xl mx-8 dark:text-white pt-7 mb-1"><ColourfulText text="Professional Experience" /></p>
-          <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Professional environments foster growth and learning</p>
-          <p className="font-normal text-sm mx-8 dark:text-white -mb-10 mt-7">
-          Explore my journey through diverse professional environments, where I’ve honed my skills, embraced challenges, and continuously learned to drive impactful results.
-          </p>
-        </div>
-        <Timeline data={data} />
+      <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-center items-center justify-center">
+        <p className="font-bold text-2xl mx-8 dark:text-white pt-7 mb-1"><ColourfulText text="Professional Experience" /></p>
+        <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Professional environments foster growth and learning</p>
+        <p className="font-normal text-sm mx-8 dark:text-white -mb-10 mt-7">
+        Explore my journey through diverse professional environments, where I’ve honed my skills, embraced challenges, and continuously learned to drive impactful results.
+        </p>
+      </div>
+      <Timeline data={data} />
     </div>
   );
 }
