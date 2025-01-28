@@ -31,12 +31,15 @@ export const Card = React.memo(
       />
       <div
         className={cn(
-          "absolute inset-0 bg-black/50 flex items-end py-8 px-4 transition-opacity duration-300",
+          "absolute inset-0 bg-black/50 flex items-start pb-1 sm:pb-2 md:pb-4 px-4 transition-opacity duration-300 flex-col justify-end",
           hovered === index ? "opacity-100" : "opacity-0"
         )}
       >
-        <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+        <div className="text-base sm:text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
           {card.title}
+        </div>
+        <div className="text-xs sm:text-sm lg:text-base text-justify font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+          {card.description}
         </div>
       </div>
     </div>
@@ -47,6 +50,7 @@ Card.displayName = "Card";
 
 type Card = {
   title: string;
+  description: string;
   src: string;
 };
 
