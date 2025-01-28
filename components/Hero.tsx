@@ -1,7 +1,7 @@
 import React from 'react'
 import { TextGenerateEffect } from './ui/text-generate-effect'
 import { AuroraBackground } from './ui/aurora-background'
-import DownloadButton from './ui/DownloadButton'
+import Button from './ui/Button'
 import { CardBody, CardContainer, CardItem } from './ui/3d-card'
 
 interface HeroProps {
@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
             <TextGenerateEffect className="font-semibold dark:text-white text-justify" words={'Passionate about real-time data processing, cloud deployment, and optimizing systems to deliver impactful solutions.'} />
             <p className="font-normal mt-4 dark:text-white">Discover my journey and projects!</p>
             <p className="font-normal text-sm dark:text-white pt-7 mb-3">View my Resume below</p>
-            <DownloadButton />
+            <Button />
           </div>
         </div>
       </AuroraBackground>

@@ -21,8 +21,10 @@ export const BackgroundLines = ({
         className
       )}
     >
-      <SVG svgOptions={svgOptions} />
-      {children}
+      <div className="absolute top-0 left-0 w-full h-full z-0">
+        <SVG svgOptions={svgOptions} />
+      </div>
+      <div className="relative z-10">{children}</div>
     </div>
   );
 };

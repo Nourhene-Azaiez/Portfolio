@@ -9,7 +9,6 @@ export default function Home() {
       <div className="w-full">
         <Hero id="Hero" />
         <About id="About" />
-        <About id="About" />
       </div>
       <FloatingDock 
         items={[

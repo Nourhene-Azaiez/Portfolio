@@ -201,7 +201,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
           </div>
         </BentoGridItem>
         <BentoGridItem title="🤝 Current Work Status" description="Currently pursuing and End-of-Study Internship and open to networking and learning opportunities" className="col-span-1 md:col-span-1">
-          <BackgroundLines className='flex flex-col justify-center items-center'>
+          <BackgroundLines className='flex flex-col justify-center items-center' svgOptions={{ duration: 5 }}>
             <div className="mt-4">
               <img
                 src="avatar.png" // Replace with your image path

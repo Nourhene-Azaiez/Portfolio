@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const DownloadButton = () => {
+const Button = () => {
   const handleDownload = () => {
     const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL;
 
@@ -51,4 +51,4 @@ const DownloadButton = () => {
   );
 };
 
-export default DownloadButton;
+export default Button;
