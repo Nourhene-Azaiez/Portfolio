@@ -107,10 +107,9 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
                     <img
                       src="/github.svg"
                       alt="GitHub Icon"
-                      width={20}
-                      height={20}
+                      className="w-14 sm:w-5"
                     />
-                    View on GitHub
+                    <span className="hidden sm:block">View on GitHub</span>
                   </motion.a>
                 </div>
 
