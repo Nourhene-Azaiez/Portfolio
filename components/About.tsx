@@ -3,6 +3,7 @@ import { BentoGrid, BentoGridItem } from './ui/bento-grid';
 import { CardSpotlight } from './ui/card-spotlight';
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 import { ColourfulText } from './ui/colourful-text';
+import { BackgroundLines } from './ui/background-lines';
 
 
 interface AboutProps {
@@ -80,7 +81,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
   return (
     <div id={id} className='dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05]' >
       <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-center items-center justify-center">
-      <p className="font-bold text-md mx-8 dark:text-white pt-7 mb-3"><ColourfulText text="About Me" /></p>
+      <p className="font-bold text-2xl mx-8 dark:text-white pt-7 mb-3"><ColourfulText text="About Me" /></p>
         <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Take a Glimpse Into My World</p>
         <p className="font-normal text-sm mx-8 dark:text-white pt-7 mb-3">
           I’m a motivated and driven engineering student passionate about data engineering, real-time data processing, and Generative AI while leveraging Devops tools 🎓. My journey combines strong theoretical knowledge with hands-on experience 💻, enabling me to design scalable data pipelines and optimize cloud architectures for high-demand environments 🌐. With a passion for cloud deployment, system optimization, and building resilient infrastructures, I focus on leveraging cutting-edge technologies to create impactful solutions 🔐. I thrive on solving complex technical challenges, ensuring systems are efficient, scalable, and secure. I aim to push the boundaries of technology in today’s fast-paced digital landscape 🚀.
@@ -90,44 +91,45 @@ const About: React.FC<AboutProps> = ({ id }) => {
         <BentoGridItem className="col-span-1 md:col-span-1 p-0 ">
           <CardSpotlight className="h-full text-neutral-800 dark:text-neutral-200">
             <p className="relative z-20 font-sans font-bold ">
-              My Approach
+            🚀 My Approach
             </p>
             <div className=" mt-1 mb-7 relative z-20 text-xs">
             I believe in combining strong work ethics, effective collaboration, and strategic thinking to deliver impactful results.
             </div>
             <ul className="relative z-20 font-sans text-xs space-y-2 pl-3 mb-3">
               <li className="flex items-center">
-                <span className="text-violet-500 mr-2">✔</span>
+                <span className=" mr-2">✔</span>
                 <strong>Adaptability</strong>
               </li>
               <li className="flex items-center">
-                <span className="text-violet-500 mr-2">✔</span>
+                <span className=" mr-2">✔</span>
                 <strong>Collaboration, Team work and Communication</strong>
               </li>
               <li className="flex items-center">
-                <span className="text-violet-500 mr-2">✔</span>
+                <span className=" mr-2">✔</span>
                 <strong>Attention to Detail and Precision</strong>
               </li>
               <li className="flex items-center">
-                <span className="text-violet-500 mr-2">✔</span>
+                <span className=" mr-2">✔</span>
                 <strong>Proactive Thinking</strong>
               </li>
               <li className="flex items-center">
-                <span className="text-violet-500 mr-2">✔</span>
+                <span className=" mr-2">✔</span>
                 <strong>Continuous Learning and Growth</strong>
               </li>
               <li className="flex items-center">
-                <span className="text-violet-500 mr-2">✔</span>
+                <span className=" mr-2">✔</span>
                 <strong>Time Management</strong>
               </li>
             </ul>
           </CardSpotlight>
         </BentoGridItem>
-        <BentoGridItem title="Tech Stack" description="Explore the tools and technologies I use to build efficient, scalable, and secure solutions." className="col-span-1 md:col-span-2">
+        <BentoGridItem title="💻 Tech Stack" description="Explore the tools and technologies I use to build efficient, scalable, and secure solutions." className="col-span-1 md:col-span-2">
           <InfiniteMovingCards
           items={line1}
           direction="right"
           speed="fast"
+          className='mt-10'
         />
         <InfiniteMovingCards
           items={line2}
@@ -142,17 +144,79 @@ const About: React.FC<AboutProps> = ({ id }) => {
         </BentoGridItem>
 
         <BentoGridItem
-          title="Studies"
-          description="Optimized cloud architecture for scalable solutions, Developed real-time data pipelines"
-          icon={<i className="fas fa-trophy"></i>}
-          className="col-span-1 md:col-span-2"
-        />
-        <BentoGridItem
-          title="Current Work Status"
-          description="AWS Certified Solutions Architect, Google Cloud Professional Data Engineer"
-          icon={<i className="fas fa-certificate"></i>}
-          className="col-span-1 md:col-span-1"
-        />
+          title="📚 My Stydies" description="A journey through foundational and advanced concepts in engineering, with a focus on cloud architecture, data systems, and innovative technologies." className="col-span-1 md:col-span-2">
+          <div className='flex flex-col md:flex-row md:space-x-10 pt-5'>
+            <div className="relative pl-12 border-l-2 mb-4 border-gray-700 group transform transition-transform duration-300 hover:scale-105">
+              <div className=" absolute left-0 top-0 transform -translate-x-1/2 -translate-y-1/2">
+                <i className=" text-2xl text-white"></i>
+              </div>
+              <p className=" text-zinc-800 text-sm bg-zinc-300 rounded-full w-fit py-1 px-2">2020 - 2022</p>
+              <h5 className="text-black dark:text-white text-lg font-semibold">
+                Preparatory Cycle
+                <span className="block text-black dark:text-white text-sm">
+                  Preparatory Institute for Engineering in Tunis
+                </span>
+              </h5>
+              <ul className="relative z-20 font-sans text-xs space-y-2 my-3">
+                <li className="flex items-center">
+                  <span className=" mr-2">•</span>
+                  <strong>Mathematics</strong>
+                </li>
+                <li className="flex items-center">
+                  <span className=" mr-2">•</span>
+                  <strong>Computer Science</strong>
+                </li>
+                <li className="flex items-center">
+                  <span className=" mr-2">•</span>
+                  <strong>Physics</strong>
+                </li>
+              </ul>
+            </div>
+            <div className="relative pl-12 border-l-2 mb-4 border-gray-700 group transform transition-transform duration-300 hover:scale-105">
+              <div className=" absolute left-0 top-0 transform -translate-x-1/2 -translate-y-1/2">
+                <i className=" text-2xl text-white"></i>
+              </div>
+              <p className=" text-zinc-800 text-sm bg-zinc-300 rounded-full w-fit py-1 px-2">2022 - Present</p>
+              <h5 className="text-black dark:text-white text-lg font-semibold">
+                ICT Engineering
+                <span className="block text-black dark:text-white text-sm">
+                  Higher School of Communication of Tunis
+                </span>
+              </h5>
+              <ul className="relative z-20 font-sans text-xs space-y-2 my-3">
+                <li className="flex items-center">
+                  <span className=" mr-2">•</span>
+                  <strong>Big Data, Database Management & BI</strong>
+                </li>
+                <li className="flex items-center">
+                  <span className=" mr-2">•</span>
+                  <strong>Cloud Computing & System Monitoring</strong>
+                </li>
+                <li className="flex items-center">
+                  <span className=" mr-2">•</span>
+                  <strong>Management, Innovation & Fintech</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </BentoGridItem>
+        <BentoGridItem title="🤝 Current Work Status" description="Currently pursuing and End-of-Study Internship and open to networking and learning opportunities" className="col-span-1 md:col-span-1">
+          <BackgroundLines className='flex flex-col justify-center items-center'>
+            <div className="mt-4">
+              <img
+                src="avatar.png" // Replace with your image path
+                alt="Availability Status"
+                className="sm:h-[150px] h-[120px]  object-cover mx-auto" // Adjust the size and styling
+              />
+            </div>
+            <div className='rounded-xl w-fit bg-zinc-800 dark:bg-zinc-100 text-white dark:text-black py-1 px-2 flex flex-row items-center space-x-3'>
+              <div className="bg-green-500 size-2.5 rounded-full"></div>
+              <div className="text-sm font-medium">
+                  Available for new projects
+              </div>
+            </div>
+          </BackgroundLines>
+        </BentoGridItem>
       </BentoGrid>
     </div>
   );

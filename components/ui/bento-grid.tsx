@@ -10,7 +10,8 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl sm:mx-24 mx-8",
+        "grid md:grid-cols-3 grid-cols-1 gap-4 max-w-7xl sm:mx-24 mx-8 pb-20",
+        "grid-auto-rows-auto", // Ensures rows adjust to content height
         className
       )}
     >
@@ -46,7 +47,7 @@ export const BentoGridItem = ({
         {icon}
         <div className="font-sans font-bold dark:text-neutral-200 text-neutral-800">{title}</div>
         {description && (
-          <div className="font-sans font-normal text-xs dark:text-neutral-300 text-neutral-800 pb-10">
+          <div className="font-sans font-normal text-xs dark:text-neutral-300 text-neutral-800">
             {description}
           </div>
         )}
