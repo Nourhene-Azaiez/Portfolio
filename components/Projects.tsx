@@ -4,6 +4,7 @@ import { ExpandableCardDemo } from './ui/ExpandableCardDemo';
 
 interface ProjectProps {
     id?: string;
+    setExpanded: (expanded: boolean) => void;
   }
 
 const cards = [
@@ -74,7 +75,7 @@ const cards = [
   
 ];
 
-const Projects: React.FC<ProjectProps> = ({ id }) => {
+export default function Projects({ id, setExpanded }: ProjectProps) {
   return (
     <div id={id} className='dark:bg-zinc-900 bg-zinc-50 dark:bg-grid-white/[0.02] bg-grid-black/[0.05] pb-14' >
       <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-center items-center justify-center">
@@ -84,9 +85,7 @@ const Projects: React.FC<ProjectProps> = ({ id }) => {
           Discover the projects I've created and worked on independently, showcasing my passion for innovation, problem-solving, and continuous learning.
         </p>
       </div>
-      <ExpandableCardDemo cards={cards} />
+      <ExpandableCardDemo cards={cards} setExpanded={setExpanded} />
     </div>
   );
 }
-
-export default Projects

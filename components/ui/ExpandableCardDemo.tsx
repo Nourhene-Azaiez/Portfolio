@@ -1,6 +1,5 @@
-"use client";
+import React, { useState, useEffect, useRef, useId, JSX } from "react";
 import Image from "next/image";
-import React, { JSX, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./use-outside-click";
 
@@ -14,9 +13,10 @@ interface Card {
 
 interface ExpandableCardDemoProps {
   cards: Card[];
+  setExpanded: (expanded: boolean) => void; // Callback to notify expansion
 }
 
-export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
+export function ExpandableCardDemo({ cards, setExpanded }: ExpandableCardDemoProps) {
   const [active, setActive] = useState<Card | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
   const id = useId();
@@ -29,20 +29,21 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
     }
 
     if (active) {
+      setExpanded(true); // Notify parent that card is expanded
       document.body.style.overflow = "hidden";
     } else {
+      setExpanded(false); // Notify parent that card is collapsed
       document.body.style.overflow = "auto";
     }
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [active]);
+  }, [active, setExpanded]);
 
   useOutsideClick(ref, () => setActive(null));
 
   return (
     <>
-      {/* Overlay */}
       <AnimatePresence>
         {active && (
           <motion.div
@@ -54,7 +55,6 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
         )}
       </AnimatePresence>
 
-      {/* Expanded Card */}
       <AnimatePresence>
         {active && (
           <div className="fixed inset-y-20 inset-x-0 flex items-center justify-center z-50">
@@ -63,14 +63,13 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
               ref={ref}
               className="w-full max-w-3xl bg-white dark:bg-zinc-900 rounded-3xl shadow-lg overflow-hidden"
             >
-              {/* Close Button */}
               <motion.button
                 layout
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setActive(null)}
-                className="absolute top-4 right-4 sm:hidden bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 p-2 rounded-full z-50"
+                className="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 p-2 rounded-full z-50"
               >
                 <CloseIcon />
               </motion.button>
@@ -89,7 +88,6 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
 
               {/* Content */}
               <div className="p-6 overflow-auto max-h-[60vh]">
-                {/* Title and GitHub Button */}
                 <div className="flex items-center justify-between">
                   <motion.h3
                     layoutId={`title-${active.title}-${id}`}
@@ -97,7 +95,6 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
                   >
                     {active.title}
                   </motion.h3>
-
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
@@ -128,7 +125,6 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
         )}
       </AnimatePresence>
 
-      {/* Card List */}
       <ul className="grid grid-cols-1 gap-4 px-7 sm:px-8 md:px-32 w-full">
         {cards.map((card, index) => (
           <motion.div
@@ -177,18 +173,9 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
 export const CloseIcon = () => {
   return (
     <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.05 } }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
