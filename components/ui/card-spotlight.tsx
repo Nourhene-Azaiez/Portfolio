@@ -41,6 +41,15 @@ export const CardSpotlight = ({
   // Use media query to check if the screen size is larger than 'md'
   const isLargeScreen = useMediaQuery({ minWidth: 768 });
 
+  // Call useMotionTemplate unconditionally
+  const maskImage = useMotionTemplate`
+    radial-gradient(
+      ${radius}px circle at ${mouseX}px ${mouseY}px,
+      white,
+      transparent 80%
+    )
+  `;
+
   return (
     <div
       className={cn(
@@ -57,13 +66,7 @@ export const CardSpotlight = ({
           className="pointer-events-none absolute h-full z-0 -inset-px rounded-xl opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
           style={{
             backgroundColor: color,
-            maskImage: useMotionTemplate`
-              radial-gradient(
-                ${radius}px circle at ${mouseX}px ${mouseY}px,
-                white,
-                transparent 80%
-              )
-            `,
+            maskImage: isLargeScreen ? maskImage : "", // Conditionally set maskImage
           }}
         >
           {isHovering && (
