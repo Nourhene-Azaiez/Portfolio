@@ -89,20 +89,26 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
 
               {/* Content */}
               <div className="p-6 overflow-auto max-h-[60vh]">
-                {/* Title and GitHub Button */}
-                <div className="flex items-center justify-between">
-                  <motion.h3
-                    layoutId={`title-${active.title}-${id}`}
-                    className="text-2xl font-bold text-zinc-800 dark:text-zinc-200"
-                  >
-                    {active.title}
-                  </motion.h3>
-
+                <div className="flex flex-row justify-between">
+                  <div>
+                    <motion.h3
+                      layoutId={`title-${active.title}-${id}`}
+                      className="text-2xl font-bold text-zinc-800 dark:text-zinc-200"
+                    >
+                      {active.title}
+                    </motion.h3>
+                    <motion.p
+                      layoutId={`description-${active.description}-${id}`}
+                      className="text-zinc-600 dark:text-zinc-400 mt-2"
+                    >
+                      {active.description}
+                    </motion.p>
+                  </div>
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-white font-bold rounded-full hover:bg-green-600"
+                    className="inline-flex items-center gap-2 h-fit px-4 py-2 bg-green-500 text-white font-bold rounded-full hover:bg-green-600"
                   >
                     <img
                       src="/github.svg"
@@ -113,13 +119,6 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
                     View on GitHub
                   </motion.a>
                 </div>
-
-                <motion.p
-                  layoutId={`description-${active.description}-${id}`}
-                  className="text-zinc-600 dark:text-zinc-400 mt-2"
-                >
-                  {active.description}
-                </motion.p>
                 <div className="mt-4 text-sm text-zinc-700 dark:text-zinc-400">
                   {active.content}
                 </div>
@@ -130,7 +129,7 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
       </AnimatePresence>
 
       {/* Card List */}
-      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-7 sm:px-8 md:px-32 w-full">
+      <ul className="max-w-2xl mx-auto w-full space-y-4">
         {cards.map((card, index) => (
           <motion.div
             key={`card-${card.title}-${id}`}

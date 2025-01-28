@@ -83,7 +83,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
       <div className="flex flex-col px-0 sm:px-14 lg:px-18 text-center items-center justify-center">
       <p className="font-bold text-2xl mx-8 dark:text-white pt-7 mb-3"><ColourfulText text="About Me" /></p>
         <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Take a Glimpse Into My World</p>
-        <p className="font-normal text-sm mx-8 dark:text-white pt-7 mb-3">
+        <p className="font-normal text-sm mx-12 dark:text-white pt-7 mb-3">
           I’m a motivated and driven engineering student passionate about data engineering, real-time data processing, and Generative AI while leveraging Devops tools 🎓. My journey combines strong theoretical knowledge with hands-on experience 💻, enabling me to design scalable data pipelines and optimize cloud architectures for high-demand environments 🌐. With a passion for cloud deployment, system optimization, and building resilient infrastructures, I focus on leveraging cutting-edge technologies to create impactful solutions 🔐. I thrive on solving complex technical challenges, ensuring systems are efficient, scalable, and secure. I aim to push the boundaries of technology in today’s fast-paced digital landscape 🚀.
         </p>
       </div>
@@ -128,18 +128,18 @@ const About: React.FC<AboutProps> = ({ id }) => {
           <InfiniteMovingCards
           items={line1}
           direction="right"
-          speed="fast"
+          speed="normal"
           className='mt-10'
         />
         <InfiniteMovingCards
           items={line2}
           direction="left"
-          speed="fast"
+          speed="normal"
         />
         <InfiniteMovingCards
           items={line3}
           direction="right"
-          speed="fast"
+          speed="normal"
         />
         </BentoGridItem>
 
