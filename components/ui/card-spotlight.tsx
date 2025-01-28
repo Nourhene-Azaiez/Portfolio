@@ -4,6 +4,7 @@ import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React, { MouseEvent as ReactMouseEvent, useState } from "react";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
+import { useMediaQuery } from "react-responsive"; // Import the useMediaQuery hook
 
 const CanvasRevealEffect = dynamic(() => import("./canvas-reveal-effect"), {
   ssr: false, // Disable server-side rendering for this component
@@ -36,6 +37,10 @@ export const CardSpotlight = ({
   const [isHovering, setIsHovering] = useState(false);
   const handleMouseEnter = () => setIsHovering(true);
   const handleMouseLeave = () => setIsHovering(false);
+
+  // Use media query to check if the screen size is larger than 'md'
+  const isLargeScreen = useMediaQuery({ minWidth: 768 });
+
   return (
     <div
       className={cn(
@@ -47,31 +52,33 @@ export const CardSpotlight = ({
       onMouseLeave={handleMouseLeave}
       {...props}
     >
-      <motion.div
-        className="pointer-events-none absolute h-full z-0 -inset-px rounded-xl opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
-        style={{
-          backgroundColor: color,
-          maskImage: useMotionTemplate`
-            radial-gradient(
-              ${radius}px circle at ${mouseX}px ${mouseY}px,
-              white,
-              transparent 80%
-            )
-          `,
-        }}
-      >
-        {isHovering && (
-          <CanvasRevealEffect
-            animationSpeed={5}
-            containerClassName="bg-transparent absolute inset-0 pointer-events-none"
-            colors={[
-              [59, 130, 246],
-              [139, 92, 246],
-            ]}
-            dotSize={3}
-          />
-        )}
-      </motion.div>
+      {isLargeScreen && ( // Only render this block if the screen is large
+        <motion.div
+          className="pointer-events-none absolute h-full z-0 -inset-px rounded-xl opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
+          style={{
+            backgroundColor: color,
+            maskImage: useMotionTemplate`
+              radial-gradient(
+                ${radius}px circle at ${mouseX}px ${mouseY}px,
+                white,
+                transparent 80%
+              )
+            `,
+          }}
+        >
+          {isHovering && (
+            <CanvasRevealEffect
+              animationSpeed={5}
+              containerClassName="bg-transparent absolute inset-0 pointer-events-none"
+              colors={[
+                [59, 130, 246],
+                [139, 92, 246],
+              ]}
+              dotSize={3}
+            />
+          )}
+        </motion.div>
+      )}
       {children}
     </div>
   );
