@@ -8,84 +8,66 @@ interface ProjectProps {
 
 const cards = [
   {
-    description: "Keywords",
-    title: "Interactive Portfolio",
-    src: "/me.png",
-    ctaLink: "https://github.com/your-username/portfolio",
+    description: "Real-time Weather API, AWS Pipeline, Machine Learning, Data Visualization, AWS SageMaker, Grafana, LLM",
+    title: "AWS Real time Air Quality Visualization, prediction and LLM reporting",
+    src: "/AWS.png",
+    ctaLink: "https://github.com/Nourhene-Azaiez/AWS-Real-time-Air-Quality-Visualization-and-prediction-and-LLM-reporting",
     content: (
       <>
         <p>
           <strong>Overview<br/></strong>
-          This project is a dynamic and responsive portfolio designed to showcase
-          my technical expertise and creativity. It features smooth animations,
-          user-friendly navigation, and optimized performance across devices.
+          This project is designed to collect, process, and visualize real-time weather data by leveraging AWS services, OpenWeather API, and machine learning tools. The pipeline automates data retrieval, cloud storage, processing for analytics, and provides real-time visualization and predictive analysis.
         </p>
-  
+
         <p><strong className="mt-4">Features</strong></p>
         <ul className="list-disc list-inside">
-          <li>Interactive and animated transitions using Framer Motion</li>
-          <li>Fully responsive design for all screen sizes</li>
-          <li>Built with React and TypeScript for scalability and maintainability</li>
-          <li>Fast-loading images with lazy loading and optimized assets</li>
-          <li>Dark mode support for better user experience</li>
+          <li>Real-time data ingestion using OpenWeather API and AWS EC2</li>
+          <li>Data streaming and processing with Amazon Kinesis and AWS Lambda</li>
+          <li>Data transformation and cataloging using AWS Glue and Athena</li>
+          <li>Interactive dashboards for visualization in Grafana</li>
+          <li>Predictive analysis with AWS SageMaker machine learning models</li>
+          <li>LLM integration for report generation and deeper insights</li>
+          <li>Automated pipeline for scalable and efficient data management</li>
         </ul>
       </>
     ),
   },
   {
-    description: "Keywords",
-    title: "Interactive",
-    src: "/me.png",
-    ctaLink: "https://github.com/your-username/portfolio",
+    description: "Real-Time Flight Data Pipeline, Dashboard, Kafka, Spark, Elasticsearch, Kibana, Docker, GitHub Actions, Azure",
+    title: "Real-Time Flight Data Pipeline and Dashboard",
+    src: "/p2m.png",
+    ctaLink: "https://github.com/Nourhene-Azaiez/Real-Time-flight-into-data-pipeline",
     content: (
       <>
         <p>
           <strong>Overview<br/></strong>
-          This project is a dynamic and responsive portfolio designed to showcase
-          my technical expertise and creativity. It features smooth animations,
-          user-friendly navigation, and optimized performance across devices.
+          This project is a real-time data pipeline and dashboard solution designed to process and visualize air traffic data dynamically. It retrieves data from the Airlabs API, processes it through a Kafka-Spark pipeline, and visualizes insights on a Kibana dashboard. The system is deployed using Docker and automated via GitHub Actions for continuous integration, hosted on Azure for scalability and reliability.
         </p>
-  
+
         <p><strong className="mt-4">Features</strong></p>
         <ul className="list-disc list-inside">
-          <li>Interactive and animated transitions using Framer Motion</li>
-          <li>Fully responsive design for all screen sizes</li>
-          <li>Built with React and TypeScript for scalability and maintainability</li>
-          <li>Fast-loading images with lazy loading and optimized assets</li>
-          <li>Dark mode support for better user experience</li>
+          <li>Real-time data ingestion using Kafka from Airlabs API</li>
+          <li>Data processing and analysis with Apache Spark</li>
+          <li>Visualization of insights on Kibana dashboards</li>
+          <li>Dockerized environment for modular and scalable architecture</li>
+          <li>Automated deployment using GitHub Actions</li>
+          <li>Hosted on Azure for cloud scalability</li>
+          <li>Interactive and customizable dashboards with filters for detailed analysis</li>
         </ul>
       </>
     ),
   },
   {
-    description: "Keywords",
-    title: " Portfolio",
-    src: "/me.png",
-    ctaLink: "https://github.com/your-username/portfolio",
+    description: "Will be Soon Available",
+    title: "Other Work",
+    src: "/dev.jpg",
+    ctaLink: "https://github.com/Nourhene-Azaiez/",
     content: (
       <>
         <p>
           <strong>Overview<br/></strong>
-          This project is a dynamic and responsive portfolio designed to showcase
-          my technical expertise and creativity. It features smooth animations,
-          user-friendly navigation, and optimized performance across devices.
+          Work in Progress
         </p>
-  
-        <p><strong className="mt-4">Features</strong></p>
-        <ul className="list-disc list-inside">
-          <li>Interactive and animated transitions using Framer Motion</li>
-          <li>Fully responsive design for all screen sizes</li>
-          <li>Built with React and TypeScript for scalability and maintainability</li>
-          <li>Fast-loading images with lazy loading and optimized assets</li>
-          <li>Dark mode support for better user experience</li>
-        </ul>
-        <ul className="list-disc list-inside">
-          <li>Interactive and animated transitions using Framer Motion</li>
-          <li>Fully responsive design for all screen sizes</li>
-          <li>Built with React and TypeScript for scalability and maintainability</li>
-          <li>Fast-loading images with lazy loading and optimized assets</li>
-          <li>Dark mode support for better user experience</li>
-        </ul>
       </>
     ),
   },

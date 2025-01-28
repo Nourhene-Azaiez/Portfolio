@@ -130,7 +130,7 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
       </AnimatePresence>
 
       {/* Card List */}
-      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-7 sm:px-8 md:px-32 w-full">
+      <ul className="grid grid-cols-1 gap-4 px-7 sm:px-8 md:px-32 w-full">
         {cards.map((card, index) => (
           <motion.div
             key={`card-${card.title}-${id}`}
@@ -150,13 +150,13 @@ export function ExpandableCardDemo({ cards }: ExpandableCardDemoProps) {
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-zinc-800 dark:text-zinc-200 text-center md:text-left"
+                  className="font-medium lg:text-sm text-zinc-800 dark:text-zinc-200 text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-zinc-600 dark:text-zinc-400 text-center md:text-left"
+                  className="text-zinc-600 lg:text-xs dark:text-zinc-400 text-center md:text-left"
                 >
                   {card.description}
                 </motion.p>
