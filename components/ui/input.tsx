@@ -59,7 +59,7 @@ Input.displayName = "Input";
 export { Input };
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, React.InputHTMLAttributes<HTMLTextAreaElement>>(
-  ({ className, ...props }, ref) => {
+  ({ className}, ref) => {
     const radius = 100; // change this to increase the radius of the hover effect
     const [visible, setVisible] = React.useState(false);
 
