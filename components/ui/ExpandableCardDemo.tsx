@@ -69,7 +69,7 @@ export function ExpandableCardDemo({ cards, setExpanded }: ExpandableCardDemoPro
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setActive(null)}
-                className="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 p-2 rounded-full z-50"
+                className="fixed top-4 right-4 lg:right-8 lg:top-20 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 p-2 rounded-full z-50"
               >
                 <CloseIcon />
               </motion.button>
@@ -88,7 +88,7 @@ export function ExpandableCardDemo({ cards, setExpanded }: ExpandableCardDemoPro
 
               {/* Content */}
               <div className="p-6 overflow-auto max-h-[60vh]">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-start">
                   <motion.h3
                     layoutId={`title-${active.title}-${id}`}
                     className="text-2xl font-bold text-zinc-800 dark:text-zinc-200"
@@ -99,7 +99,7 @@ export function ExpandableCardDemo({ cards, setExpanded }: ExpandableCardDemoPro
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-white font-bold rounded-full hover:bg-green-600"
+                    className="inline-flex items-center justify-center sm:w-72 gap-2 px-4 py-2 bg-green-500 text-white dark:text-black font-bold rounded-full hover:bg-green-600"
                   >
                     <img
                       src="/github.svg"
@@ -177,15 +177,15 @@ export const CloseIcon = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.05 } }}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-4 w-4 text-black"
+      className="lg:h-5 lg:w-5 h-4 w-4 text-black"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />
