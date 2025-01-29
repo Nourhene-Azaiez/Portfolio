@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <main className="relative bg-zinc-50 dark:bg-zinc-900 flex justify-center items-center flex-col overflow-auto mx-auto">
-      <div className="w-full">
+      <div className="w-full h-full">
         <Hero id="Hero" />
         <About id="About" />
         <Projects id="Projects" setExpanded={setIsCardExpanded} />
