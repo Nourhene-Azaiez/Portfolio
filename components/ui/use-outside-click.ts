@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 export const useOutsideClick = (
-  ref: React.RefObject<HTMLDivElement | null>, // Allow null as a valid type
-  callback: Function
+  ref: React.RefObject<HTMLDivElement | null>,
+  callback: (event: MouseEvent | TouchEvent) => void
 ) => {
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
