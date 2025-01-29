@@ -5,9 +5,6 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
-
 const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
   ({ className, type, ...props }, ref) => {
     const radius = 100; // change this to increase the rdaius of the hover effect
@@ -61,9 +58,6 @@ Input.displayName = "Input";
 
 export { Input };
 
-export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
-
 const Textarea = React.forwardRef<HTMLTextAreaElement, React.InputHTMLAttributes<HTMLTextAreaElement>>(
   ({ className, ...props }, ref) => {
     const radius = 100; // change this to increase the radius of the hover effect
@@ -107,7 +101,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.InputHTMLAttributes
             className
           )}
           ref={ref}
-          {...props}
+          rows={5}
         />
       </motion.div>
     );

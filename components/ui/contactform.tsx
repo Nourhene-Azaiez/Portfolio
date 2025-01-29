@@ -53,7 +53,7 @@ export function ContactForm() {
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <div className="w-full">
-                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-3">
                 <LabelInputContainer>
                     <Label htmlFor="firstname">First Name</Label>
                     <Input id="firstname" placeholder="John" type="text" required />
@@ -63,14 +63,14 @@ export function ContactForm() {
                     <Input id="lastname" placeholder="Doe" type="text" required />
                 </LabelInputContainer>
                 </div>
-                <LabelInputContainer className="mb-4">
+                <LabelInputContainer className="mb-3">
                 <Label htmlFor="email">Email Address</Label>
                 <Input id="email" placeholder="you@example.com" type="email" required />
                 </LabelInputContainer>
             </div>
             <LabelInputContainer className="h-full">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your message..." rows={4} required />
+                <Textarea id="message" placeholder="Your message..." required />
             </LabelInputContainer>
         </div>
 
