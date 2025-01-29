@@ -1,6 +1,5 @@
 "use client";
 import emailjs from "emailjs-com";
-import React, { useState } from "react";
 import { Label } from "../ui/label";
 import { Input, Textarea } from "../ui/input";
 import { cn } from "@/lib/utils";
@@ -48,7 +47,7 @@ export function ContactForm() {
         Contact Me
       </h2>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Feel free to reach out. I'll get back to you as soon as possible.
+        Feel free to reach out. I&apos;ll get back to you as soon as possible.
       </p>
 
       <form className="my-8" onSubmit={handleSubmit}>

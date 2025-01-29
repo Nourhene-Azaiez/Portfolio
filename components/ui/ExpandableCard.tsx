@@ -101,9 +101,11 @@ export function ExpandableCardDemo({ cards, setExpanded }: ExpandableCardDemoPro
                     target="_blank"
                     className="inline-flex items-center justify-center sm:w-72 gap-2 px-4 py-2 bg-green-500 text-white dark:text-black font-bold rounded-full hover:bg-green-600"
                   >
-                    <img
+                    <Image
                       src="/github.svg"
                       alt="GitHub Icon"
+                      width={5}
+                      height={5}
                       className="w-14 sm:w-5"
                     />
                     <span className="hidden sm:block">View on GitHub</span>
@@ -126,7 +128,7 @@ export function ExpandableCardDemo({ cards, setExpanded }: ExpandableCardDemoPro
       </AnimatePresence>
 
       <ul className="grid grid-cols-1 gap-4 px-7 sm:px-8 md:px-32 w-full">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
@@ -185,7 +187,7 @@ export const CloseIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lg:h-5 lg:w-5 h-4 w-4 text-black"
+      className="lg:h-5 lg:w-5 h-4 w-4 text-black dark:text-white"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />

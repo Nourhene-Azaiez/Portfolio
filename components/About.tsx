@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 import { BentoGrid, BentoGridItem } from './ui/bento-grid';
 import { CardSpotlight } from './ui/card-spotlight';
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
@@ -203,15 +204,17 @@ const About: React.FC<AboutProps> = ({ id }) => {
         <BentoGridItem title="🤝 Current Work Status" description="Currently pursuing an End-of-Study Internship and open to networking and learning opportunities" className="col-span-1 md:col-span-1">
           <BackgroundLines className='flex flex-col justify-center items-center' svgOptions={{ duration: 5 }}>
             <div className="mt-4">
-              <img
-                src="avatar.png" // Replace with your image path
+              <Image
+                src="/avatar.png" // Replace with your image path
                 alt="Availability Status"
+                width={150}
+                height={150}
                 className="sm:h-[150px] h-[120px]  object-cover mx-auto" // Adjust the size and styling
               />
             </div>
             <div className='rounded-xl w-fit bg-zinc-800 dark:bg-zinc-100 text-white dark:text-black py-1 px-2 flex flex-row items-center space-x-3'>
               <div className="bg-green-500 size-2.5 rounded-full"></div>
-              <div className="text-sm font-medium">
+              <div className="sm:text-sm text-xs font-medium">
                   Available for new projects
               </div>
             </div>

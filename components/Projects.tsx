@@ -1,6 +1,6 @@
 import React from 'react'
 import { ColourfulText } from './ui/colourful-text';
-import { ExpandableCardDemo } from './ui/ExpandableCardDemo';
+import { ExpandableCardDemo } from './ui/ExpandableCard';
 
 interface ProjectProps {
     id?: string;
@@ -82,7 +82,7 @@ export default function Projects({ id, setExpanded }: ProjectProps) {
         <p className="font-bold text-2xl mx-8 dark:text-white pt-7 mb-1"><ColourfulText text="Personal Projects" /></p>
         <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Turning ideas into reality, one project at a time.</p>
         <p className="font-normal text-sm mx-8 dark:text-white mb-10 mt-7">
-          Discover the projects I've created and worked on independently, showcasing my passion for innovation, problem-solving, and continuous learning.
+          Discover the projects I&apos;ve created and worked on independently, showcasing my passion for innovation, problem-solving, and continuous learning.
         </p>
       </div>
       <ExpandableCardDemo cards={cards} setExpanded={setExpanded} />

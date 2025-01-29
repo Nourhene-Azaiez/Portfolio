@@ -78,7 +78,7 @@ interface ExperienceProps {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-medium mb-4">
-            Internship - Mediatron Laboratory - Sup'Com
+            Internship - Mediatron Laboratory - Sup&apos;Com
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
             Decentralized Medical Record System: Enhancing Healthcare Data Integration and Patient Privacy
@@ -98,7 +98,7 @@ interface ExperienceProps {
             </div>
             <div className="grid grid-cols-[auto_1fr] gap-2 items-start text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
               <div>✅</div>
-              <div>Evaluated the system's potential to enhance healthcare data integration, diagnosis accuracy, and overall outcomes.</div>
+              <div>Evaluated the system&apos;s potential to enhance healthcare data integration, diagnosis accuracy, and overall outcomes.</div>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ const Experience: React.FC<ExperienceProps> = ({ id }) => {
         <p className="font-bold text-2xl mx-8 dark:text-white pt-7 mb-1"><ColourfulText text="Professional Experience" /></p>
         <p className="font-extrabold text-center text-4xl mt-2 mx-8 dark:text-white">Professional environments foster growth and learning</p>
         <p className="font-normal text-sm mx-8 dark:text-white md:-mb-10 mt-7">
-        Explore my journey through diverse professional environments, where I’ve honed my skills, embraced challenges, and continuously learned to drive impactful results.
+        Explore my journey through diverse professional environments, where I&apos;ve honed my skills, embraced challenges, and continuously learned to drive impactful results.
         </p>
       </div>
       <Timeline data={data} />
