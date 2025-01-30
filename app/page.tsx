@@ -5,7 +5,7 @@ import Contact from "@/pages/Contact";
 import Experience from "@/pages/Experience";
 import Hero from "@/pages/Hero";
 import Projects from "@/pages/Projects";
-import { FloatingDock } from "@/pages/ui/floating-dock";
+import { FloatingDock } from "@/pages/components/floating-dock";
 import Volunteering from "@/pages/Volunteering";
 import { FaHome, FaUser, FaBriefcase, FaEnvelope, FaHandsHelping, FaLaptop } from "react-icons/fa";
 

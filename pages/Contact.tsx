@@ -1,6 +1,6 @@
 import React from 'react'
-import { ColourfulText } from './ui/colourful-text';
-import { ContactForm } from './ui/contactform';
+import { ColourfulText } from './components/colourful-text';
+import { ContactForm } from './components/contactform';
 
 interface ProjectProps {
     id?: string;

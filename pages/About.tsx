@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image'
-import { BentoGrid, BentoGridItem } from './ui/bento-grid';
-import { CardSpotlight } from './ui/card-spotlight';
-import { InfiniteMovingCards } from './ui/infinite-moving-cards';
-import { ColourfulText } from './ui/colourful-text';
-import { BackgroundLines } from './ui/background-lines';
+import { BentoGrid, BentoGridItem } from './components/bento-grid';
+import { CardSpotlight } from './components/card-spotlight';
+import { InfiniteMovingCards } from './components/infinite-moving-cards';
+import { ColourfulText } from './components/colourful-text';
+import { BackgroundLines } from './components/background-lines';
 
 
 interface AboutProps {

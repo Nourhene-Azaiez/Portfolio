@@ -1,5 +1,6 @@
 "use client";
 import { Label } from "./label";
+import { useRef } from "react";
 import { Input, Textarea } from "./input";
 import { cn } from "@/lib/utils";
 import {
@@ -7,10 +8,12 @@ import {
     IconBrandLinkedin,
     IconLocation,
   } from "@tabler/icons-react";
+import { useSubmitForm } from "../hooks/useSubmitForm";
 
 
 export function ContactForm() {
-
+  const formRef = useRef<HTMLFormElement>(null);
+  const { isSubmitting, isSuccess, handleSubmit } = useSubmitForm();
 
   return (
     <div className="max-w-6xl w-full lg:mx-auto mx-5 rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-zinc-200 dark:bg-black">
@@ -21,7 +24,7 @@ export function ContactForm() {
         Feel free to reach out. I&apos;ll get back to you as soon as possible.
       </p>
 
-      <form className="my-8" action="/api/contact" method="POST">
+      <form className="my-8" onSubmit={(e) => formRef.current && handleSubmit(e, formRef.current)} ref={formRef}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <div className="w-full">
                 <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-3">
@@ -49,8 +52,9 @@ export function ContactForm() {
             <button
                 className="bg-zinc-400 dark:bg-zinc-800 hover:bg-green-500 dark:hover:bg-green-700 block w-full text-black dark:text-white rounded-full h-10 font-medium shadow-md"
                 type="submit"
+                disabled={isSubmitting}
                 >
-                Send Message
+                {isSubmitting ? "Sending..." : isSuccess ? "Sent!" : "Send Message"}
             </button>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
                 <button
