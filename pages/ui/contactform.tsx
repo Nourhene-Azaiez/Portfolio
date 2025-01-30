@@ -1,7 +1,6 @@
 "use client";
-import emailjs from "emailjs-com";
-import { Label } from "../ui/label";
-import { Input, Textarea } from "../ui/input";
+import { Label } from "./label";
+import { Input, Textarea } from "./input";
 import { cn } from "@/lib/utils";
 import {
     IconBrandGithub,
@@ -9,37 +8,9 @@ import {
     IconLocation,
   } from "@tabler/icons-react";
 
+
 export function ContactForm() {
-  
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  
-    // Get form data
-    const formData = new FormData(e.target as HTMLFormElement);
-    const firstName = formData.get("firstname") as string;
-    const lastName = formData.get("lastname") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
-  
-    const templateParams = {
-      firstname: firstName,
-      lastname: lastName,
-      email: email,
-      message: message,
-    };
-  
-    // Send the email using EmailJS
-    emailjs
-      .send("your_service_id", "your_template_id", templateParams, "your_user_id")
-      .then(
-        (response) => {
-          console.log("Message sent successfully:", response);
-        },
-        (error) => {
-          console.error("Error sending message:", error);
-        }
-      );
-  };
+
 
   return (
     <div className="max-w-6xl w-full lg:mx-auto mx-5 rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-zinc-200 dark:bg-black">
@@ -50,27 +21,27 @@ export function ContactForm() {
         Feel free to reach out. I&apos;ll get back to you as soon as possible.
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <form className="my-8" action="/api/contact" method="POST">
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <div className="w-full">
                 <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-3">
                 <LabelInputContainer>
                     <Label htmlFor="firstname">First Name</Label>
-                    <Input id="firstname" placeholder="John" type="text" required />
+                    <Input name="firstname" placeholder="John" type="text" required />
                 </LabelInputContainer>
                 <LabelInputContainer>
                     <Label htmlFor="lastname">Last Name</Label>
-                    <Input id="lastname" placeholder="Doe" type="text" required />
+                    <Input name="lastname" placeholder="Doe" type="text" required />
                 </LabelInputContainer>
                 </div>
                 <LabelInputContainer className="mb-3">
                 <Label htmlFor="email">Email Address</Label>
-                <Input id="email" placeholder="you@example.com" type="email" required />
+                <Input name="email" placeholder="you@example.com" type="email" required />
                 </LabelInputContainer>
             </div>
             <LabelInputContainer className="h-full">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your message..." required />
+                <Textarea name="message" placeholder="Your message..." required />
             </LabelInputContainer>
         </div>
 

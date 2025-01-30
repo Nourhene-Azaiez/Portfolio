@@ -1,12 +1,12 @@
 "use client"
 import { useState } from "react";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Experience from "@/components/Experience";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import { FloatingDock } from "@/components/ui/floating-dock";
-import Volunteering from "@/components/Volunteering";
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import Experience from "@/pages/Experience";
+import Hero from "@/pages/Hero";
+import Projects from "@/pages/Projects";
+import { FloatingDock } from "@/pages/ui/floating-dock";
+import Volunteering from "@/pages/Volunteering";
 import { FaHome, FaUser, FaBriefcase, FaEnvelope, FaHandsHelping, FaLaptop } from "react-icons/fa";
 
 export default function Home() {

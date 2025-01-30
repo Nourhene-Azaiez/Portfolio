@@ -102,6 +102,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.InputHTMLAttributes
           )}
           ref={ref}
           rows={5}
+          name="message"
         />
       </motion.div>
     );
