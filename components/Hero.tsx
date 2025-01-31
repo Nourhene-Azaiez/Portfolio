@@ -20,8 +20,8 @@ const Hero: React.FC<HeroProps> = () => {
               <CardItem translateZ="100" className="w-full h-full">
                 <Image
                   src="/me.png"
-                  height="400"
-                  width="300"
+                  fill
+                  quality={100}
                   className="w-full h-full object-cover rounded-xl group-hover/card:shadow-xl"
                   alt="thumbnail"
                 />

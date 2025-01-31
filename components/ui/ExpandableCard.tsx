@@ -134,14 +134,14 @@ export function ExpandableCardDemo({ cards, setExpanded }: ExpandableCardDemoPro
             onClick={() => setActive(card)}
             className="p-4 flex flex-col md:flex-row justify-between items-center bg-zinc-200 dark:bg-black hover:shadow-xl dark:shadow-zinc-800 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
+            <div className="flex gap-4 flex-col lg:flex-row">
+              <motion.div layoutId={`image-${card.title}-${id}`} className="justify-items-center">
                 <Image
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
+                  className="h-40 w-40 md:h-14 rounded-lg object-cover object-top"
                 />
               </motion.div>
               <div className="">
