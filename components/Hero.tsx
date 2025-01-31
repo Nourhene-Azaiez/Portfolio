@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import { TextGenerateEffect } from './components/text-generate-effect'
-import { AuroraBackground } from './components/aurora-background'
-import Button from './components/Button'
-import { CardBody, CardContainer, CardItem } from './components/3d-card'
+import { TextGenerateEffect } from './ui/text-generate-effect'
+import { AuroraBackground } from './ui/aurora-background'
+import Button from './ui/Button'
+import { CardBody, CardContainer, CardItem } from './ui/3d-card'
 
 interface HeroProps {
   id?: string;

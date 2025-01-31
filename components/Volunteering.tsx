@@ -1,6 +1,6 @@
 import React from 'react'
-import { FocusCards } from './components/focus-cards';
-import { ColourfulText } from './components/colourful-text';
+import { FocusCards } from './ui/focus-cards';
+import { ColourfulText } from './ui/colourful-text';
 
 interface ProjectProps {
     id?: string;

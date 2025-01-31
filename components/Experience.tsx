@@ -1,6 +1,6 @@
 import React from 'react'
-import { Timeline } from './components/timeline';
-import { ColourfulText } from './components/colourful-text';
+import { Timeline } from './ui/timeline';
+import { ColourfulText } from './ui/colourful-text';
 
 interface ExperienceProps {
     id?: string;

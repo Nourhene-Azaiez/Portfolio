@@ -1,6 +1,6 @@
 import React from 'react'
-import { ColourfulText } from './components/colourful-text';
-import { ExpandableCardDemo } from './components/ExpandableCard';
+import { ColourfulText } from './ui/colourful-text';
+import { ExpandableCardDemo } from './ui/ExpandableCard';
 
 interface ProjectProps {
     id?: string;
