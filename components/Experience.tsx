@@ -8,6 +8,37 @@ interface ExperienceProps {
 
   const data = [
     {
+      title: "February - June 2025",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-medium mb-4">
+            End of Study Internship - Talan Tunisie Consulting
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Designed and deployed an intelligent BI module for monitoring payments and solvency using agentic AI
+          </p>
+          <div className="mb-8">
+            <div className="grid grid-cols-[auto_1fr] gap-2 items-start text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              <div>✅</div>
+              <div>Built a centralized data warehouse (constellation schema) integrating data source systems and 3 dedicated data marts.</div>
+            </div>
+            <div className="grid grid-cols-[auto_1fr] gap-2 items-start text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              <div>✅</div>
+              <div>Reduced overall development time by 40% through intelligent automation of ETL pipelines.</div>
+            </div>
+            <div className="grid grid-cols-[auto_1fr] gap-2 items-start text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              <div>✅</div>
+              <div>Used LLM-powered multi-agent system to auto-generate Talend jobs with up to 82.5% semantic mapping accuracy and 75% execution success rate.</div>
+            </div>
+            <div className="grid grid-cols-[auto_1fr] gap-2 items-start text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              <div>✅</div>
+              <div>Implemented a log monitoring agent and natural language dashboard exploration to boost user autonomy and reduce technical dependency by 60%.</div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "September 2024-January 2025",
       content: (
         <div>
